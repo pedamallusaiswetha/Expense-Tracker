@@ -1,6 +1,6 @@
 # Expense Tracker
 
-A full-stack expense tracker built with Java, MySQL, and plain HTML/CSS/JavaScript for learning, portfolio projects, and fresher interviews.
+Expense Tracker & Budget Management System built with Java, MySQL, JDBC, HTML, CSS, and JavaScript. It helps users manage income and expenses, view real-time financial summaries, store transactions securely in a database, validate inputs, and maintain data persistence through a simple full-stack web application.
 
 ## Features
 
@@ -10,6 +10,15 @@ A full-stack expense tracker built with Java, MySQL, and plain HTML/CSS/JavaScri
 - Filter transactions by month
 - Delete transactions
 - Persist data in MySQL using JDBC
+
+## Technologies
+
+- Java
+- MySQL
+- JDBC
+- HTML
+- CSS
+- JavaScript
 
 ## Project structure
 
@@ -24,15 +33,7 @@ A full-stack expense tracker built with Java, MySQL, and plain HTML/CSS/JavaScri
 - MySQL 8 or newer
 - MySQL Connector/J JAR already included in `Backend/`
 
-## How to run
-
-### Step 1 — Clone the project
-
-```powershell
-cd C:\path\to\ExpenseTracker
-```
-
-### Step 2 — Create the database
+## Database setup
 
 ```powershell
 mysql -u root -p
@@ -46,7 +47,7 @@ USE expense_tracker;
 SOURCE schema.sql;
 ```
 
-### Step 3 — Configure database credentials
+## Environment / configuration setup
 
 Set environment variables for your local MySQL setup in PowerShell:
 
@@ -62,7 +63,7 @@ If your MySQL root user does not use a password, set `DB_PASSWORD` to an empty s
 $env:DB_PASSWORD = ""
 ```
 
-### Step 4 — Compile the backend
+## How to compile
 
 From the project root:
 
@@ -70,7 +71,7 @@ From the project root:
 javac -d Backend Backend\*.java
 ```
 
-### Step 5 — Start the backend
+## How to run
 
 ```powershell
 java -cp "Backend;Backend\mysql-connector-j-26.7.0.jar" ExpenseServer
@@ -78,15 +79,13 @@ java -cp "Backend;Backend\mysql-connector-j-26.7.0.jar" ExpenseServer
 
 The backend will start on `http://localhost:8080`.
 
-### Step 6 — Open the app
+## How to open the application
 
 Open this in your browser:
 
 ```text
 http://localhost:8080/
 ```
-
----
 
 ## API
 
@@ -107,3 +106,4 @@ http://localhost:8080/
 - Database credentials are loaded from environment variables instead of being hardcoded in source code.
 - The frontend communicates with the Java server over HTTP at `localhost:8080`.
 - Financial amounts are stored in MySQL as `DECIMAL(12,2)` for better precision.
+>>>>>>> origin/main
