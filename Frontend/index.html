@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="container">
+        <header class="hero">
+            <div><p class="eyebrow">PERSONAL FINANCE</p><h1>Expense tracker</h1><p class="subheading">A clear view of where your money is going.</p></div>
+            <label class="month-picker" for="monthFilter">Month<input id="monthFilter" type="month"></label>
+            <div class="actions"><button id="addIncomeBtn" class="button income">+ Income</button><button id="addExpenseBtn" class="button expense">+ Expense</button></div>
+        </header>
+        <section class="summary" aria-label="Financial summary">
+            <div class="summary-card income-card"><span>Total income</span><strong id="totalIncome">₹0.00</strong></div>
+            <div class="summary-card expense-card"><span>Total expenses</span><strong id="totalExpense">₹0.00</strong></div>
+            <div class="summary-card balance-card"><span>Available balance</span><strong id="balance">₹0.00</strong></div>
+        </section>
+        <p id="statusMessage" class="status" role="status"></p>
+        <section class="panel"><div class="panel-heading"><p class="eyebrow">ACTIVITY</p><h2>Recent transactions</h2></div><div id="transactionList"><p class="empty">Loading transactions...</p></div></section>
+    </main>
+    <form id="transactionForm" class="form-panel" hidden>
+        <div class="form-heading"><h2 id="formTitle">Add transaction</h2><button type="button" id="cancelBtn" class="close" aria-label="Close">×</button></div>
+        <input type="hidden" id="type" name="type" value="EXPENSE">
+        <label for="amount">Amount</label><input id="amount" name="amount" type="number" min="0.01" step="0.01" required placeholder="0.00">
+        <label for="category">Category</label><select id="category" name="category"><option>Salary</option><option>Food</option><option>Groceries</option><option>Travel</option><option>Shopping</option><option>Rent</option><option>Utilities</option><option>Healthcare</option><option>Education</option><option>Entertainment</option><option>Investment</option><option>Other</option></select>
+        <label for="date">Date</label><input id="date" name="date" type="date" required>
+        <label for="description">Description <span>(optional)</span></label><input id="description" name="description" maxlength="120" placeholder="What was this for?">
+        <button class="button expense save" type="submit">Save transaction</button>
+    </form>
+    <script src="script.js"></script>
+</body>
+</html>

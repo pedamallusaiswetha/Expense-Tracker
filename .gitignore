@@ -1,0 +1,21 @@
+# IDE/editor files
+.vscode/
+.idea/
+*.iml
+
+# Java build artifacts
+*.class
+
+# Logs and temp files
+*.log
+*.tmp
+*.swp
+
+# Local environment and secrets
+.env
+.env.*
+*.local
+
+# OS-specific files
+.DS_Store
+Thumbs.db
